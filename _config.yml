@@ -23,19 +23,25 @@ email: Bradley@bradley-james.ca
 author: Bradley James
 description: >- # this means to ignore newlines until "baseurl:"
   A personal website for Bradley James, 
-  where I post about things I discover about technology as I figure out where I might end up in the overwhelming world of information technology 
+  where I post about things I discover about technology and figure out where I might end up in the overwhelming world of IT 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://bradley-james.ca" # the base hostname & protocol for your site, e.g. http://example.com
+
 github_username:  Aliocantinea
 # mastodon social_links https://github.com/jekyll/minima/issues/406#issuecomment-575541227
 mastodon:
   - username: Aliocantinea
     instance: mastodon.social
 
+collections:
+  bookmarks:
+    output: true
+
 # Build settings
 theme: minima
 plugins:
   - jekyll-feed
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
