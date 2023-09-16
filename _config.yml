@@ -19,13 +19,14 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Type nerdy to me
-email: Bradley@bradley-james.ca
-author: Bradley James
+author:
+  name: Bradley James
+  email: "Bradley@bradley-james.ca"
 description: >- # this means to ignore newlines until "baseurl:"
-  A personal website for Bradley James, 
-  where I post about things I discover about technology and figure out where I might end up in the overwhelming world of IT 
+  My personal website where I post about things I discover about technology and figure out where I might end up in the overwhelming world of IT 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://bradley-james.ca" # the base hostname & protocol for your site, e.g. http://example.com
+
 
 github_username:  Aliocantinea
 # mastodon social_links https://github.com/jekyll/minima/issues/406#issuecomment-575541227

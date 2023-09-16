@@ -4,3 +4,4 @@
 
 layout: home
 ---
+My blog documenting some of my struggles and hopefully some wins as I find my place in life. Mostly technology focused but sometimes a bit more that I feel is relevant to me in the moment.
