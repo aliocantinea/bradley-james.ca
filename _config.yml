@@ -1,38 +1,11 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you:
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-
 title: Type nerdy to me
 author:
   name: Bradley James
-  email: "Bradley@bradley-james.ca"
+  email: "blog@bradley-james.ca"
 description: >- # this means to ignore newlines until "baseurl:"
   My personal website where I post about things I discover about technology and figure out where I might end up in the overwhelming world of IT 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://bradley-james.ca" # the base hostname & protocol for your site, e.g. http://example.com
-
-
-github_username:  Aliocantinea
-# mastodon social_links https://github.com/jekyll/minima/issues/406#issuecomment-575541227
-mastodon:
-  - username: Aliocantinea
-    instance: mastodon.social
 
 collections:
   bookmarks:
@@ -40,26 +13,55 @@ collections:
 
 # Build settings
 theme: minima
+
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
 
+# Theme-specific settings
 
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
+minima:
+  skin: dark
+  # Minima date format.
+  # Refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this.
+  #
+  # date_format: "%b %-d, %Y"
+
+  # Generate social links in footer.
+  #
+  social_links:
+    - { platform: github,         user_url: "https://github.com/jekyll/aliocantinea" }
+    - { platform: mastodon,       user_url: "https://mastodon.social/@Aliocantinea" }
+    - { platform: email,          user_url: "mailto:blog@bradley-james.ca" }
+    - { platform: rss,            user_url: "{{ site.feed.path | default: 'feed.xml' | absolute_url }}" }
+  #   - { platform: devto,          user_url: "https://dev.to/jekyll" }
+  #   - { platform: dribbble,       user_url: "https://dribbble.com/jekyll" }
+  #   - { platform: facebook,       user_url: "https://www.facebook.com/jekyll" }
+  #   - { platform: flickr,         user_url: "https://www.flickr.com/photos/jekyll" }
+  #   - { platform: google_scholar, user_url: "https://scholar.google.com/citations?user=qc6CJjYAAAAJ" }
+  #   - { platform: instagram,      user_url: "https://www.instagram.com/jekyll" }
+  #   - { platform: keybase,        user_url: "https://keybase.io/jekyll" }
+  #   - { platform: linkedin,       user_url: "https://www.linkedin.com/in/jekyll" }
+  #   - { platform: microdotblog,   user_url: "https://micro.blog/jekyll" }
+  #   - { platform: pinterest,      user_url: "https://www.pinterest.com/jekyll" }
+  #   - { platform: stackoverflow,  user_url: "https://stackoverflow.com/users/1234567/jekyll" }
+  #   - { platform: telegram,       user_url: "https://t.me/jekyll" }
+  #   - { platform: twitter,        user_url: "https://twitter.com/jekyllrb" }
+  #   - { platform: youtube,        user_url: "https://www.youtube.com/jekyll" }
+
+# If you want to link only specific pages in your header, uncomment this and add the path to the pages in
+# order as they should show up.
 #
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+  header_pages:
+    - vault.md
+    - about.md
+
+permalink: /:title/
+show_excerpts: true
+
+# Syntax highlighter settings
+kramdown:
+  syntax_highlighter_opts:
+    default_lang: kotlin
+    guess_lang: true
+
