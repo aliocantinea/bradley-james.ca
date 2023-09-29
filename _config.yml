@@ -33,7 +33,7 @@ minima:
     - { platform: github,         user_url: "https://github.com/jekyll/aliocantinea" }
     - { platform: mastodon,       user_url: "https://mastodon.social/@Aliocantinea" }
     - { platform: email,          user_url: "mailto:blog@bradley-james.ca" }
-    - { platform: rss,            user_url: "{{ site.feed.path | default: 'feed.xml' | absolute_url }}" }
+    - { platform: rss,            user_url: "https://bradley-james.ca/feed.xml" }
   #   - { platform: devto,          user_url: "https://dev.to/jekyll" }
   #   - { platform: dribbble,       user_url: "https://dribbble.com/jekyll" }
   #   - { platform: facebook,       user_url: "https://www.facebook.com/jekyll" }
