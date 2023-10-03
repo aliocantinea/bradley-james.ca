@@ -7,12 +7,22 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "~> 4.3.2"
+#gem "jekyll", "~> 4.3.2"
+
+# This was the hardest part to find to get working. 
+# Every site I looked at only pieces but this seems to finally work
+# Since it is pulling from the theme repo though it could break
+# But it seems to take forever for it to ever get updates 
+gem "jekyll", github: "jekyll/jekyll"
+gem "jekyll", ENV["JEKYLL_VERSION"] if ENV["JEKYLL_VERSION"] 
+gem "kramdown-parser-gfm" if ENV["JEKYLL_VERSION"] == "~> 3.9"
+
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
-gem "minima"
+gem "minima", git: "https://github.com/jekyll/minima"
+
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
-# gem "github-pages", group: :jekyll_plugins
+#gem "github-pages", group: :jekyll_plugins
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "jekyll-feed"

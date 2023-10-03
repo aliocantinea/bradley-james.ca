@@ -1,2 +1,198 @@
 // Placeholder to allow defining custom styles that override everything else.
 // (Use `_sass/minima/custom-variables.scss` to override variable defaults)
+
+body {
+  font: 400 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: $text-color;
+  background-color: $background-color;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+  -o-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  /** Stipped flex from body and set grid to wrapper instead */
+}
+
+/**
+  * Wrapper
+*/
+/* When adding media query needs to be in order it seems, when I put larger breakpoints below smaller ones it stops early */
+.grid-wrapper {
+  width: auto;
+  height: calc(100vh - ($spacing-unit * 3));
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 30px;
+  padding-left: 30px;    
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-top: calc($spacing-unit * 3);
+  align-content: start;
+  column-gap: calc($spacing-unit / 4);
+  transition: 1000ms;
+  text-align: center;
+}
+
+/* For better centering on larger aspect ratios */
+@media screen and (max-width: 2000px) {
+  .grid-wrapper {
+    grid-template-columns: 3fr 7fr;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .grid-wrapper {
+    grid-template-columns: 1fr 3fr;
+  }
+}
+/* For small screens */
+@media screen and (max-width: 800px) {
+  .grid-wrapper {
+    height: calc(100% - $spacing-unit);
+    max-width: calc(800px - $spacing-unit);
+    padding-right: 15px;
+    padding-left: 15px;
+    display: grid;
+    grid-template-columns: auto;
+    margin-top: $spacing-unit;
+    align-content:  start;
+    row-gap: $spacing-unit;
+    transition: 1000ms;
+  }
+}
+
+.post-card {
+  background-color: $background-color;
+  border-radius: $spacing-unit;
+  margin: $spacing-unit auto;
+  padding: calc($spacing-unit / 4) calc($spacing-unit / 2) ;
+  transition: 5ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+@media screen and (max-width: 800px) {
+  .post-card {
+    max-width: 650px;
+  }
+}
+
+/**
+  * Navigation 
+  */
+/* Sets content to center over breakpoint */
+.navigation {
+  width: fit-content;
+  margin-right: 10px;
+  margin-left: auto;
+}
+@media screen and (max-width: 800px) {
+  .navigation {
+    margin: auto;
+  }
+  .nav-links {
+    margin: auto auto 15px auto;
+
+  }
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+/* makes navigation list into a span on mobile to take less vertical space */
+@media screen and (max-width: 800px) {
+  .nav-links li {
+    display: inline;
+  }  
+}
+
+
+/**
+ * Page content
+ */
+ .column-left { 
+  /* Size set in grid-wrapper to max of 200px, so if margins are reduced other column will grow */
+  grid-column: 1 / 2;
+  padding-left: auto;
+}
+
+.column-right {
+  grid-column: 2 / 3;
+  overflow-x: scroll;
+  padding-right: calc($spacing-unit / 4);
+}
+
+/* Sets to single column on smallers screens */
+@media screen and (max-width: 800px) {
+  .column-left,
+  .column-right {
+    grid-column: 1 / 2;
+  }  
+}
+
+/* To stop text reflowing when width changes these breakpoints kick in causing staggered sizes and less reflowing of lines */
+.content {
+  max-width: 800px;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 1150px) {
+  .content {
+    max-width: 675px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .content {
+    max-width: 500px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .content {
+    max-width: 700px;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 750px) {
+  .content {
+    max-width: 500px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .content {
+    max-width: 400px;
+  }
+}
+
+/* Pushes content to center when over breakpoint */
+.page {
+  margin-right: auto;
+}
+
+/**
+ * Posts
+ */
+ .posts {
+  max-width: 800px;
+
+}
+
+.posts li{
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-card {
+  background-color: $table-zebra-color;
+  border-radius: $spacing-unit;
+  margin: $spacing-unit auto;
+  padding: calc($spacing-unit / 4) calc($spacing-unit / 2) ;
+  transition: 5ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+@media screen and (max-width: 800px) {
+  .post-card {
+    max-width: 650px;
+  }
+}
+
