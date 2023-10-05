@@ -4,15 +4,20 @@
   {%- include head.html -%}
 
   <body>
-    <div class="grid-wrapper">
-      <header class="column-left">
-        <div class="navigation">
+    <div class="grid">
+      <header>
+        <div class="header-footer">
           {%- include header.html -%}
         </div>
       </header>
-      <main class="column-right" aria-label="posts">
+      <main class="main" aria-label="main content">
         {{ content }}
       </main>
+      <footer>
+        <div class="header-footer">
+          <img class="profile-picture" alt="profile picture" src="https://avatars.githubusercontent.com/u/907203?v=4">
+        </div>
+      </footer>
     </div>
   </body>
 </html>

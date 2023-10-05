@@ -1,63 +1,54 @@
 // Placeholder to allow defining custom styles that override everything else.
 // (Use `_sass/minima/custom-variables.scss` to override variable defaults)
 
-body {
-  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
-  color: $text-color;
-  background-color: $background-color;
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-feature-settings: "kern" 1;
-     -moz-font-feature-settings: "kern" 1;
-       -o-font-feature-settings: "kern" 1;
-          font-feature-settings: "kern" 1;
-  font-kerning: normal;
-  /** Stipped flex from body and set grid to wrapper instead */
-}
 
 
 /**
   * Wrapper
 */
 /* When adding media query needs to be in order it seems, when I put larger breakpoints below smaller ones it stops early */
-.grid-wrapper {
+.grid {
   width: calc(100vw - #{$spacing-unit});
-  height: calc(100vh - (#{$spacing-unit} * 3));
+  height: calc(100vh - calc(#{$spacing-unit} * 3));
   padding-right: calc(#{$spacing-unit} / 2);
   padding-left: calc(#{$spacing-unit} / 2);    
   display: grid;
-  grid-template-columns: 1fr 2fr;
   margin-top: calc(#{$spacing-unit} * 3);
-  align-content: start;
   column-gap: calc(#{$spacing-unit} / 4);
   transition: 1000ms;
   text-align: center;
+  grid-template-rows: 1fr 6fr;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas: 
+    'header main'
+    'footer main';
 }
 
-/* For better centering on larger aspect ratios */
-@media screen and (max-width: 2000px) {
-  .grid-wrapper {
+/* For ultrawide screens */
+@media screen and (min-width: 2000px) {
+  .grid {
     grid-template-columns: 3fr 7fr;
+
   }
 }
 
-@media screen and (max-width: 1600px) {
-  .grid-wrapper {
-    grid-template-columns: 1fr 3fr;
-  }
-}
 /* For small screens */
 @media screen and (max-width: 800px) {
-  .grid-wrapper {
+  .grid {
     height: calc(100% - #{$spacing-unit});
     max-width: calc(800px - #{$spacing-unit});
     padding-right: 15px;
     padding-left: 15px;
     display: grid;
-    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+      'header'
+      'main'
+      'footer';
     margin-top: #{$spacing-unit};
     align-content:  start;
     row-gap: #{$spacing-unit};
-    transition: 1000ms;
+    /*transition: 1000ms; */
   }
 }
 
@@ -76,15 +67,21 @@ body {
 
 /**
   * Navigation 
-  */
+*/
 /* Sets content to center over breakpoint */
-.navigation {
+header {
+  grid-area: header;
+}
+
+.header-footer {
   width: fit-content;
   margin-right: 10px;
   margin-left: auto;
+  text-align: right;
+  grid-area: left;
 }
 @media screen and (max-width: 800px) {
-  .navigation {
+  .header-footer {
     margin: auto;
   }
   .nav-links {
@@ -107,27 +104,7 @@ body {
 
 /**
  * Page content
- */
- .column-left { 
-  /* Size set in grid-wrapper to max of 200px, so if margins are reduced other column will grow */
-  grid-column: 1 / 2;
-  padding-left: auto;
-}
-
-.column-right {
-  grid-column: 2 / 3;
-  overflow-x: scroll;
-  padding-right: calc(#{$spacing-unit} / 4);
-}
-
-/* Sets to single column on smallers screens */
-@media screen and (max-width: 800px) {
-  .column-left,
-  .column-right {
-    grid-column: 1 / 2;
-  }  
-}
-
+*/
 /* To stop text reflowing when width changes these breakpoints kick in causing staggered sizes and less reflowing of lines */
 .content {
   max-width: 800px;
@@ -164,14 +141,23 @@ body {
 }
 
 /* Pushes content to center when over breakpoint */
-.page {
-  margin-right: auto;
+.main {
+  grid-area: main;
+  margin: 0 #{$spacing-unit};
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
+
+@media screen and (max-width: 800px) {
+  .main {
+    margin: auto;
+  }
+ }
 
 /**
  * Posts
- */
- .posts {
+*/
+.posts {
   max-width: 800px;
 
 }
@@ -195,3 +181,15 @@ body {
   }
 }
 
+/**
+ *Footer
+*/
+footer {
+  grid-area: footer;
+  margin-bottom: auto;
+}
+
+.profile-picture {
+  width: 160px ;
+  height: 160px;
+}
