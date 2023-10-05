@@ -28,7 +28,7 @@
 @media screen and (min-width: 2000px) {
   .grid {
     grid-template-columns: 3fr 7fr;
-
+    transition: 1000ms;
   }
 }
 
@@ -41,6 +41,7 @@
     padding-left: 15px;
     display: grid;
     grid-template-rows: auto;
+    grid-template-columns: 1fr;
     grid-template-areas:
       'header'
       'main'
@@ -48,7 +49,7 @@
     margin-top: #{$spacing-unit};
     align-content:  start;
     row-gap: #{$spacing-unit};
-    /*transition: 1000ms; */
+    transition: 1000ms;
   }
 }
 
@@ -83,6 +84,7 @@ header {
 @media screen and (max-width: 800px) {
   .header-footer {
     margin: auto;
+    text-align: center;
   }
   .nav-links {
     margin: auto auto 15px auto;
@@ -159,10 +161,14 @@ header {
 */
 .posts {
   max-width: 800px;
-
+}
+@media screen and (max-width: 800px) {
+  .posts {
+    margin: auto;
+  }
 }
 
-.posts li{
+.posts li {
   list-style: none;
   margin-left: auto;
   margin-right: auto;
