@@ -31,7 +31,7 @@ minima:
   # Generate social links in footer.
   #
   social_links:
-    - { platform: github,         user_url: "https://github.com/jekyll/aliocantinea" }
+    - { platform: github,         user_url: "https://github.com/aliocantinea" }
     - { platform: mastodon,       user_url: "https://mastodon.social/@Aliocantinea" }
     - { platform: email,          user_url: "mailto:blog@bradley-james.ca" }
     - { platform: rss,            user_url: "https://bradley-james.ca/feed.xml" }
