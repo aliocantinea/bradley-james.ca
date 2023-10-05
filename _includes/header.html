@@ -17,8 +17,10 @@
         {%- endif -%}
       {%- endfor -%}
     </ul>
-    {%- include social.html -%}
-    
+    {%- unless page.title == "About" -%}
+      {%- include social.html -%}
+    {%- endunless -%}
+      
     {%- endif -%}
   </nav>
     
