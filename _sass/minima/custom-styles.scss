@@ -15,23 +15,17 @@
   margin-top: calc(#{$spacing-unit} * 3);
   transition: 500ms ease-in-out;
   text-align: center;
-  grid-template-rows: 1fr 99fr;
   grid-template-columns: 1fr 3fr;
   grid-template-areas: 
     'header main'
     'footer main';
-}
-
-/* For ultrawide screens */
-@media screen and (min-width: 2000px) {
-  .grid {
+  /* For ultrawide screens */
+  @media screen and (min-width: 2000px) {
     grid-template-columns: 3fr 7fr;
   }
-}
-
-/* For small screens */
-@media screen and (max-width: 800px) {
-  .grid {
+  
+  /* For small screens */
+  @media screen and (max-width: 800px) {
     max-width: calc(800px - #{$spacing-unit});
     padding-right: 15px;
     padding-left: 15px;
@@ -47,15 +41,14 @@
   }
 }
 
+
 .post-card {
   background-color: $background-color;
   border-radius: #{$spacing-unit};
   margin: #{$spacing-unit} auto;
   padding: calc(#{$spacing-unit} / 4) calc(#{$spacing-unit} / 2) ;
   transition: 5ms cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-@media screen and (max-width: 800px) {
-  .post-card {
+  @media screen and (max-width: 800px) {
     max-width: 650px;
   }
 }
@@ -64,86 +57,126 @@
   * Navigation 
 */
 /* Sets content to center over breakpoint */
-header {
+.header-footer {
   grid-area: header;
   position: sticky;
   top: 0;
   padding: $spacing-unit 0;
   background: $background-color;
+  @media screen and (max-width: 800px) {
+    padding: calc(#{$spacing-unit} / 4);
+  }
 }
 
 h1 {
   letter-spacing: -1px;
+  @media screen and (max-width: 800px) {
+    margin-bottom: calc(#{$spacing-unit} / 4);
+  }
 }
 
 
 
-.header-footer {
+header {
   position: relative;
   width: fit-content;
   padding: #{$spacing-unit} calc(#{$spacing-unit} / 4);
-  margin-top: Calc(#{$spacing-unit} * 5);
+  margin-top: calc(#{$spacing-unit} * 5);
   margin-right: 10px;
   margin-left: auto;
   background: #{$table-zebra-color};
   border-radius: #{$spacing-unit};
   text-align: right;
   grid-area: left;
-}
-@media screen and (max-width: 800px) {
-  .header-footer {
+  @media screen and (max-width: 800px) {
     margin: auto;
     text-align: center;
+    max-height: fit-content;
+    padding: calc(#{$spacing-unit} / 4) calc(#{$spacing-unit} / 2);
   }
-  .nav-links {
-    margin: auto auto 15px auto;
+}
 
+@media screen and (max-width: 800px){
+  nav {
+    margin: auto calc(#{$spacing-unit} / 2);
+  }
+}
+
+.nav-links {
+  margin: auto #{$spacing-unit} #{$spacing-unit}  auto;
+  @media screen and (max-width: 800px) {
+    margin: auto;
   }
 }
 
 .nav-links li {
   list-style: none;
-}
-
-/* makes navigation list into a span on mobile to take less vertical space */
-@media screen and (max-width: 800px) {
-  .nav-links li {
+  /* makes navigation list into a span on mobile to take less vertical space */
+  @media screen and (max-width: 800px) {
     display: inline;
-  }  
+    padding: 0 5px;
+    margin: 0;
+  }
 }
 
-.profile-picture {
+
+.profile-picture,
+footer {
   position: absolute;
   display: block;
   inset: calc(#{$spacing-unit} / 2);
   width: calc(100% - #{$spacing-unit});
   aspect-ratio: 1;
   z-index: -1;
-  margin: 0 auto auto auto;
   border-radius: #{$spacing-unit} #{$spacing-unit} 0 0;
   transition: 1000ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-
-
-.header-footer:hover , 
-.header-footer:focus-within {
-  .profile-picture {
-    transform: translateY(-100%);
+.profile-picture {
+  margin: 0 auto auto auto;
+  @media screen and (max-width: 800px) {
+    height: calc(100% - (#{$spacing-unit} / 2));
+    border-radius: #{$spacing-unit} 0 0 #{$spacing-unit};
+    width: fit-content;
+    margin: auto auto auto 0;
+    transform: translateX(-100%);
+  }
+}
+footer {
+  margin: auto auto 0 auto;
+  text-align: center;
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
+  .site-author {
+    margin-top: 10%;
   }
 }
 
-@media screen and (max-width: 800px) {
-  .profile-picture {
-    height: calc(100% - #{$spacing-unit});
-    width: auto;
-    margin: auto auto auto 0;
-    border-radius: #{$spacing-unit} 0 0 #{$spacing-unit};
-  }
+sub {
+  letter-spacing: -1px;
+}
+
+
+@media screen and (min-width: 800px) {
   .header-footer:hover , 
-  .header-footer:focus {
+  .header-footer:focus-within {
     .profile-picture {
-      transform: translateX(-100%);
+      transform: translateY(-100%);
     }
+    footer {
+      transform: translateY(100%);
+    }
+  }
+}
+
+
+.social-media-list > span {
+  letter-spacing: 10px;
+}
+
+@media screen and (max-width: 800px) {
+  .socials {
+    display: none;
   }
 }
 
@@ -155,58 +188,42 @@ h1 {
 .content {
   max-width: 800px;
   margin-right: 10px;
-}
-
-@media screen and (max-width: 1150px) {
-  .content {
+  @media screen and (max-width: 1150px) {
     max-width: 675px;
   }
-}
-
-@media screen and (max-width: 1000px) {
-  .content {
+  @media screen and (max-width: 1000px) {
     max-width: 500px;
   }
-}
-
-@media screen and (max-width: 800px) {
-  .content {
+  @media screen and (max-width: 800px) {
     max-width: 700px;
     margin: auto;
   }
-}
-@media screen and (max-width: 750px) {
-  .content {
+  @media screen and (max-width: 750px) {
     max-width: 500px;
   }
-}
-@media screen and (max-width: 550px) {
-  .content {
+  @media screen and (max-width: 550px) {
     max-width: 400px;
   }
 }
+
 
 /* Pushes content to center when over breakpoint */
 .main {
   grid-area: main;
   margin: 0 #{$spacing-unit};
   overflow-x: hidden;
-}
-
-@media screen and (max-width: 800px) {
-  .main {
+  @media screen and (max-width: 800px) {
     margin: auto;
   }
- }
+}
+
 
 /**
  * Posts
 */
 .posts {
   margin: auto;
-}
-@media screen and (max-width: 800px) {
-  .posts {
+  @media screen and (max-width: 800px) {
     margin: auto;
   }
 }
