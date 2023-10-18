@@ -2,6 +2,7 @@ title: Type nerdy to me
 author:
   name: Bradley James
   email: "blog@bradley-james.ca"
+  pronouns: "He/Him She/Her"
 description: >- # this means to ignore newlines until "baseurl:"
   My personal website where I post about things I discover about technology and figure out where I might end up in the overwhelming world of IT 
 baseurl: "" # the subpath of your site, e.g. /blog
