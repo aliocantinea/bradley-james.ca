@@ -8,7 +8,13 @@ layout: base
     {%- endif -%}
   
     {{ content }}
-        
+    
+    <p class="site-author">
+      {{ site.author.name }}
+      <br>
+      <sub class="pronouns"> {{ site.author.pronouns }} </sub>
+    </p>
+
     <div class="social-links">
         {%- include social.html -%}
     </div>
