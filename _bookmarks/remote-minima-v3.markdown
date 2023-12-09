@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: post
 title:  "Remote Minima theme v3"
 date:   2023-09-14 17:49:18 -0700
 tags:   vault
@@ -10,7 +10,8 @@ color:
 This might not work going forward but the only way I was able to get things to update for me was the following cobbled together from a few different places after some intense googling. The files are included on my github but you can also refer below if it helps at all! 
 
 ### Gemfile
-{
+
+    {% highlight ruby %}
     source "https://rubygems.org"
 
     # Since it is pulling from the theme repo though it could break
@@ -26,15 +27,15 @@ This might not work going forward but the only way I was able to get things to u
     #gem "github-pages", group: :jekyll_plugins
     # If you have any plugins, put them here!
     group :jekyll_plugins do
-    gem "jekyll-feed"
-    gem "jekyll-remote-theme"
+      gem "jekyll-feed"
+      gem "jekyll-remote-theme"
     end
 
     # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
     # and associated library.
     platforms :mingw, :x64_mingw, :mswin, :jruby do
-    gem "tzinfo", ">= 1", "< 3"
-    gem "tzinfo-data"
+      gem "tzinfo", ">= 1", "< 3"
+      gem "tzinfo-data"
     end
 
     # Performance-booster for watching directories on Windows
@@ -43,4 +44,4 @@ This might not work going forward but the only way I was able to get things to u
     # Lock `http_parser.rb` gem to `v0.6.x` on JRuby builds since newer versions of the gem
     # do not have a Java counterpart.
     gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
-}
+    {% endhighlight %}

@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: post
 title:  "Hello Jekyll"
 date:   2023-09-07 17:49:18 -0700
 tags: 
@@ -22,8 +22,9 @@ Hopefully this is enough and I can continue to learn more going forward!
 
 This might not work going forward but the only way I was able to get things to update for me was the following cobbled together from a few different places after some intense googling. The files are included on my github but you can also refer below if it helps at all! 
 
-### Gemfile
-{
+### Gemfile   
+
+    {% highlight ruby %}
     source "https://rubygems.org"
 
     # Since it is pulling from the theme repo though it could break
@@ -39,15 +40,15 @@ This might not work going forward but the only way I was able to get things to u
     #gem "github-pages", group: :jekyll_plugins
     # If you have any plugins, put them here!
     group :jekyll_plugins do
-    gem "jekyll-feed"
-    gem "jekyll-remote-theme"
+      gem "jekyll-feed"
+      gem "jekyll-remote-theme"
     end
 
     # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
     # and associated library.
     platforms :mingw, :x64_mingw, :mswin, :jruby do
-    gem "tzinfo", ">= 1", "< 3"
-    gem "tzinfo-data"
+      gem "tzinfo", ">= 1", "< 3"
+      gem "tzinfo-data"
     end
 
     # Performance-booster for watching directories on Windows
@@ -56,23 +57,25 @@ This might not work going forward but the only way I was able to get things to u
     # Lock `http_parser.rb` gem to `v0.6.x` on JRuby builds since newer versions of the gem
     # do not have a Java counterpart.
     gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
-}
+    
+
 
 ### config.yml
 My config file in case you find it useful
-{
+    
+    {% highlight yml %}
     title: Type nerdy to me
     author:
-    name: Bradley James
-    email: "blog@bradley-james.ca"
-    pronouns: "He/Him She/Her"
+      name: Bradley James
+      email: "blog@bradley-james.ca"
+      pronouns: "He/Him She/Her"
     description: >- # this means to ignore newlines until "baseurl:"
-    My personal website where I post about things I discover about technology and figure out where I might end up in the overwhelming world of IT 
+      My personal website where I post about things I discover about technology and figure out where I might end up in the overwhelming world of IT 
     baseurl: "" # the subpath of your site, e.g. /blog
     url: "https://bradley-james.ca" # the base hostname & protocol for your site, e.g. http://example.com
 
     collections:
-    bookmarks:
+      bookmarks:
         output: true
 
 
@@ -80,39 +83,39 @@ My config file in case you find it useful
     remote_theme: jekyll/minima
 
     plugins:
-    - jekyll-feed
-    - jekyll-seo-tag
+      - jekyll-feed
+      - jekyll-seo-tag
 
     # Theme-specific settings
 
     minima:
-    skin: auto
-    # Minima date format.
-    # Refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this.
-    #
-    # date_format: "%b %-d, %Y"
+      skin: auto
+      # Minima date format.
+      # Refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this.
+      #
+      # date_format: "%b %-d, %Y"
 
-    # Generate social links in footer.
-    #
-    social_links:
+      # Generate social links in footer.
+      #
+      social_links:
         - { platform: github,         user_url: "https://github.com/aliocantinea" }
         - { platform: mastodon,       user_url: "https://mastodon.social/@Aliocantinea" }
         - { platform: email,          user_url: "mailto:blog@bradley-james.ca" }
         - { platform: rss,            user_url: "https://bradley-james.ca/feed.xml" }
-    #   - { platform: devto,          user_url: "https://dev.to/jekyll" }
-    #   - { platform: dribbble,       user_url: "https://dribbble.com/jekyll" }
-    #   - { platform: facebook,       user_url: "https://www.facebook.com/jekyll" }
-    #   - { platform: flickr,         user_url: "https://www.flickr.com/photos/jekyll" }
-    #   - { platform: google_scholar, user_url: "https://scholar.google.com/citations?user=qc6CJjYAAAAJ" }
-    #   - { platform: instagram,      user_url: "https://www.instagram.com/jekyll" }
-    #   - { platform: keybase,        user_url: "https://keybase.io/jekyll" }
-    #   - { platform: linkedin,       user_url: "https://www.linkedin.com/in/jekyll" }
-    #   - { platform: microdotblog,   user_url: "https://micro.blog/jekyll" }
-    #   - { platform: pinterest,      user_url: "https://www.pinterest.com/jekyll" }
-    #   - { platform: stackoverflow,  user_url: "https://stackoverflow.com/users/1234567/jekyll" }
-    #   - { platform: telegram,       user_url: "https://t.me/jekyll" }
-    #   - { platform: twitter,        user_url: "https://twitter.com/jekyllrb" }
-    #   - { platform: youtube,        user_url: "https://www.youtube.com/jekyll" }
+      #   - { platform: devto,          user_url: "https://dev.to/jekyll" }
+      #   - { platform: dribbble,       user_url: "https://dribbble.com/jekyll" }
+      #   - { platform: facebook,       user_url: "https://www.facebook.com/jekyll" }
+      #   - { platform: flickr,         user_url: "https://www.flickr.com/photos/jekyll" }
+      #   - { platform: google_scholar, user_url: "https://scholar.google.com/citations?user=qc6CJjYAAAAJ" }
+      #   - { platform: instagram,      user_url: "https://www.instagram.com/jekyll" }
+      #   - { platform: keybase,        user_url: "https://keybase.io/jekyll" }
+      #   - { platform: linkedin,       user_url: "https://www.linkedin.com/in/jekyll" }
+      #   - { platform: microdotblog,   user_url: "https://micro.blog/jekyll" }
+      #   - { platform: pinterest,      user_url: "https://www.pinterest.com/jekyll" }
+      #   - { platform: stackoverflow,  user_url: "https://stackoverflow.com/users/1234567/jekyll" }
+      #   - { platform: telegram,       user_url: "https://t.me/jekyll" }
+      #   - { platform: twitter,        user_url: "https://twitter.com/jekyllrb" }
+      #   - { platform: youtube,        user_url: "https://www.youtube.com/jekyll" }
 
     # If you want to link only specific pages in your header, uncomment this and add the path to the pages in
     # order as they should show up.
@@ -126,7 +129,7 @@ My config file in case you find it useful
 
     # Syntax highlighter settings
     kramdown:
-    syntax_highlighter_opts:
+      syntax_highlighter_opts:
         default_lang: kotlin
         guess_lang: true
-}
+    {% endhighlight %}
