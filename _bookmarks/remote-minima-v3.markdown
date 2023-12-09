@@ -9,7 +9,7 @@ color:
 
 This might not work going forward but the only way I was able to get things to update for me was the following cobbled together from a few different places after some intense googling. The files are included on my github but you can also refer below if it helps at all! 
 
-###Gemfile
+### Gemfile
 {
     source "https://rubygems.org"
 

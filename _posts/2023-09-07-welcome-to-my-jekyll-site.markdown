@@ -22,7 +22,7 @@ Hopefully this is enough and I can continue to learn more going forward!
 
 This might not work going forward but the only way I was able to get things to update for me was the following cobbled together from a few different places after some intense googling. The files are included on my github but you can also refer below if it helps at all! 
 
-###Gemfile
+### Gemfile
 {
     source "https://rubygems.org"
 
@@ -58,7 +58,7 @@ This might not work going forward but the only way I was able to get things to u
     gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 }
 
-###config.yml
+### config.yml
 My config file in case you find it useful
 {
     title: Type nerdy to me

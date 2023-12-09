@@ -12,19 +12,19 @@ As I find more I will continue to update the list with new ones I enjoy and mayb
 
 These is in no particular order but I will add to the top to keep the most recent floating to the top
 
-##[Adam Argyle](https://nerdy.dev/) [RSS link](https://nerdy.dev/rss.xml)
+## [Adam Argyle](https://nerdy.dev/) [RSS link](https://nerdy.dev/rss.xml)
 Member of CSS Pdocast, some other general website stuff. Great animations and site design
 ---
 
-##[Chris Coyier](https://chriscoyier.net/) [RSS link](https://chriscoyier.net/feed/)
+## [Chris Coyier](https://chriscoyier.net/) [RSS link](https://chriscoyier.net/feed/)
 CSS-Tricks creator with interesting posts about all sorts of things including web dev and design
 ---
 
-##[Alex Zhukovich](https://alexzh.com/) [RSS link](https://alexzh.com/rss)
+## [Alex Zhukovich](https://alexzh.com/) [RSS link](https://alexzh.com/rss)
 Android development tips, with great easy to follow and very usable examples
 ---
 
-##[Amit Merchant](https://www.amitmerchant.com/) [RSS link](https://www.amitmerchant.com/feed.xml)
+## [Amit Merchant](https://www.amitmerchant.com/) [RSS link](https://www.amitmerchant.com/feed.xml)
 Sometimes (often) a bit over my head, but some interesting topics around web dev
 ---
 
