@@ -1,9 +1,32 @@
 ---
 layout: base
-title:  "Testing the vault"
+title:  "Blogs I have in my RSS feed"
 date:   2023-09-14 17:49:18 -0700
-tags: vault
-categories: bookmarks
+tags:   
+categories: Learning
+color:  
 ---
 
-Not even sure if this is even how this is suppost to work
+These are some of the blogs I have found to have some good content while I was creating this site.
+As I find more I will continue to update the list with new ones I enjoy and maybe remove ones I stop enjoying.
+
+These is in no particular order but I will add to the top to keep the most recent floating to the top
+
+##[Adam Argyle](https://nerdy.dev/) [RSS link](https://nerdy.dev/rss.xml)
+Member of CSS Pdocast, some other general website stuff. Great animations and site design
+---
+
+##[Chris Coyier](https://chriscoyier.net/) [RSS link](https://chriscoyier.net/feed/)
+CSS-Tricks creator with interesting posts about all sorts of things including web dev and design
+---
+
+##[Alex Zhukovich](https://alexzh.com/) [RSS link](https://alexzh.com/rss)
+Android development tips, with great easy to follow and very usable examples
+---
+
+##[Amit Merchant](https://www.amitmerchant.com/) [RSS link](https://www.amitmerchant.com/feed.xml)
+Sometimes (often) a bit over my head, but some interesting topics around web dev
+---
+
+Is RSS even still a thing? I find it useful. It is a nice way to keep an eye on websites that I find get burried in social media and it is easier for me to keep groups of sites by theme so I can switch easily when my interests come in and out of focus. Plus being able to download batches means I can still have something to read when I am out of service or don't want to use data. 
+I use [Feeder on F-Droid](https://f-droid.org/packages/com.nononsenseapps.feeder/) but you can also get it on [Google's Play Store](https://play.google.com/store/apps/details?id=com.nononsenseapps.feeder.play&hl=en_US&pli=1).
