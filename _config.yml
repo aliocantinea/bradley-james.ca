@@ -11,6 +11,11 @@ url: "https://bradley-james.ca" # the base hostname & protocol for your site, e.
 collections:
   bookmarks:
     output: true
+    permalink: /:collection/:name
+  projects:
+    output: true
+    permalink: /:collection/:name
+collections_dir: pages
 
 
 # Build settings
@@ -56,6 +61,7 @@ minima:
 #
   header_pages:
     - vault.md
+    - projects.md
     - about.md
 
 permalink: /:title/

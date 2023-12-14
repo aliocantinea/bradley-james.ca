@@ -27,6 +27,7 @@
   /* For small screens */
   @media screen and (max-width: 800px) {
     max-width: calc(800px - #{$spacing-unit});
+    min-width: 430px;
     padding-right: 15px;
     padding-left: 15px;
     display: grid;
@@ -64,7 +65,8 @@
   padding: $spacing-unit 0;
   background: $background-color;
   @media screen and (max-width: 800px) {
-    padding: calc(#{$spacing-unit} / 4);
+    padding: calc(#{$spacing-unit} / 4) 0;
+    width: 100%;
   }
 }
 
@@ -263,6 +265,10 @@ sub {
 
 .post {
   text-align: left;
+}
+
+img {
+  border-radius: #{$spacing-unit};
 }
 
 blockquote {

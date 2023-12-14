@@ -2,7 +2,7 @@
 layout: post
 title:  "Hello Jekyll"
 date:   2023-09-07 17:49:18 -0700
-tags: 
+tags:   
 categories: Jekyll
 color:  
 ---
