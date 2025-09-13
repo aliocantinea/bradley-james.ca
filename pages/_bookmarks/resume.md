@@ -4,9 +4,9 @@ title: "Resume"
 date: 2025-09-12 19:49:18 -0700
 tags:
   - work
-categories: bookmarks
+categories: 
 permalink: /work/resume/
 color:
 ---
 
-![Resume](/assets/files/Resume.pdf)
+<object data="../assets/files/Resume.pdf" width="1000" height="1000" type='application/pdf'></object>
