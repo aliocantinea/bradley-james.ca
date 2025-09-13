@@ -1,10 +1,11 @@
 ---
 layout: post
-title:  "Remote Minima theme v3"
-date:   2023-09-14 17:49:18 -0700
-tags:   vault
+title: "Remote minima theme v3"
+date: 2023-09-14 17:49:18 -0700
+tags:
+  - vault
 categories: bookmarks
-color:  
+color:
 ---
 
 This might not work going forward but the only way I was able to get things to update for me was the following cobbled together from a few different places after some intense googling. The files are included on my github but you can also refer below if it helps at all! 
