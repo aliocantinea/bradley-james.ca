@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CS50, Introduction to Computer Science"
+title:  CS50, Introduction to Computer Science
 date:   2023-12-13 19:00:00 -0700
 tags:   class
 categories: projects
